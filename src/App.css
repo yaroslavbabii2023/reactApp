@@ -16,6 +16,5 @@
 .app-wrapper-content {
     grid-area: c;
     background: linear-gradient(to left, #4cb6e7, #B1A296);
-    height: 100vh;
 }
 

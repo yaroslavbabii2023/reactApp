@@ -5,7 +5,7 @@ const Post = (props) => {
     return (
         <div className={s.item}>
             <img src="https://png.pngtree.com/element_our/png_detail/20181114/cartoon-santa-claus-illustration-png_239389.jpg"/>
-                post
+            {props.message}
             <span>{props.like}</span>
         </div>
     )
