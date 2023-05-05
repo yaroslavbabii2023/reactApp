@@ -1,7 +1,8 @@
 .nav {
     grid-area: n;
-    background-color: burlywood;
+    background: linear-gradient(to top, #22313b, #052f49);
     padding: 20px;
+    font-size: 25px;
 }
 
 .item a {

@@ -1,9 +1,11 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 2fr 10fr;
+    grid-template-columns: 2fr 3fr;
+
 }
 .dialogsItem {
-    padding: 10px;
+    padding: 20px;
+    margin-left: 20px;
 }
 
 .dialogsItem .active {
@@ -14,8 +16,8 @@
 
 }
 .messages {
-    padding: 10px;
+    padding: 20px;
 }
 .message {
-
+    padding: 10px;
 }
