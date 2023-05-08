@@ -5,7 +5,7 @@ const ProfileInfo = () => {
     return (
         <div className={s.profileBlock}>
             <div>
-                <img src='https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg?auto=compress&cs=tinysrgb&h=350' alt="img"/>
+                <img src='https://media.proglib.io/wp-uploads/2018/04/ethical_hacking.png' alt="img"/>
             </div>
             <div className={s.descriptionBlock}>
                 ava + description
