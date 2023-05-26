@@ -17,7 +17,6 @@ const Dialogs = (props) => {
     let onNewMessageChange = (e) => {
         let body = e.target.value;
         props.onNewMessageChange(body)
-
     }
 
     return (
