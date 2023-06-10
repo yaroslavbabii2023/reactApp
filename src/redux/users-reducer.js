@@ -4,12 +4,7 @@ const SET_USERS = 'SET_USERS'
 
 
 let initialState = {
-    users: [
-        {id: 1, followed: true, fullName: 'Yaroslav', status: 'I am a hungry', location: {city: 'Vinnitsa', country: 'Ukraine'}},
-        {id: 2, followed: true, fullName: 'Dima', status: 'I am a busy', location: {city: 'Lviv', country: 'Ukraine'}},
-        {id: 3, followed: true, fullName: 'Andriy', status: 'I am a small', location: {city: 'Kyiv', country: 'Ukraine'}},
-        {id: 4, followed: false, fullName: 'Oleksandr', status: 'I am a happy', location: {city: 'Harkiv', country: 'Ukraine'}},
-    ],
+    users: [],
 
 };
 

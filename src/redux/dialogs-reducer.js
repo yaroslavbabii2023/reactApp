@@ -1,4 +1,3 @@
-import message from "../components/Dialogs/Message/Message";
 
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE_BODY'
 const SEND_MESSAGE = 'SEND_MESSAGE'
