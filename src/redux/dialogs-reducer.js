@@ -1,4 +1,3 @@
-
 const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE_BODY'
 const SEND_MESSAGE = 'SEND_MESSAGE'
 
@@ -39,7 +38,6 @@ const dialogsReducer = (state = initialState, action) => {
         default:
             return state
     }
-
 }
 
 export let sendMessageCreator = () => ({type: SEND_MESSAGE})
