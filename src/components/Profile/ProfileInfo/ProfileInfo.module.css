@@ -1,6 +1,11 @@
 .descriptionBlock {
     padding: 10px;
 }
+
+.descriptionBlock img {
+    width: 50%;
+}
+
 .profileBlock img{
     display: block;
     width: 100%;

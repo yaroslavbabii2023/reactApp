@@ -7,12 +7,12 @@ const ProfileInfo = (props) => {
         return <Preloader/>
     }
     return (
-        <div className={s.profileBlock}>
-            <div>
+        <div >
+            <div className={s.profileBlock}>
                 <img src='https://media.proglib.io/wp-uploads/2018/04/ethical_hacking.png' alt="img"/>
             </div>
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.small}/>
+                <img src={props.profile.photos.large}/>
                 ava + description
             </div>
         </div>

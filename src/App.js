@@ -14,7 +14,7 @@ return (
         <Navbar />
         <div className='app-wrapper-content'>
             <Routes>
-                <Route path="/profile/*"
+                <Route path="/profile/:profileId?"
                        element={<ProfileContainer/>}/>
                 <Route path="/dialogs/*"
                        element={<DialogsContainer/>}/>
