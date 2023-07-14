@@ -1,5 +1,4 @@
 import {UsersAPI} from "../api/api";
-import {render} from "react-dom";
 
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
@@ -83,7 +82,6 @@ export const getUsers= (currentPage, pageSize) => {
         })
     }
 }
-
 export const unfollow = (userId) => {
     return (dispatch) => {
         dispatch(toggleIsFollowingProgress(true, userId))
@@ -96,7 +94,6 @@ export const unfollow = (userId) => {
             });
     }
 }
-
 export const follow = (userId) => {
     return (dispatch) => {
         dispatch(toggleIsFollowingProgress(true, userId))
@@ -109,5 +106,7 @@ export const follow = (userId) => {
             });
     }
 }
+
+
 
 export default usersReducer; 
