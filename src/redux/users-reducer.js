@@ -1,3 +1,6 @@
+import {UsersAPI} from "../api/api";
+import {render} from "react-dom";
+
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET_USERS'
@@ -61,13 +64,50 @@ const usersReducer = (state = initialState, action) => {
 }
 
 
-export let follow = (userId) => ({type: FOLLOW, userId})
-export let unfollow = (userId) => ({type: UNFOLLOW, userId})
+export let followSuccess = (userId) => ({type: FOLLOW, userId})
+export let unfollowSuccess = (userId) => ({type: UNFOLLOW, userId})
 export let setUsers = (users) => ({type: SET_USERS, users})
 export let setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
 export let setUsersTotalCount = (totalUsersCount) => ({type: SET_USERS_TOTAL_COUNT, count: totalUsersCount})
 export let toggleIsFetching = (isFetching)  => ({type: TOGGLE_IS_FETCHING, isFetching})
 export let toggleIsFollowingProgress = (isFetching, userId)  => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId})
 
+
+export const getUsers= (currentPage, pageSize) => {
+    return (dispatch) => {
+        dispatch(toggleIsFetching(true))
+        UsersAPI.getUsers(currentPage, pageSize).then(data => {
+            dispatch(toggleIsFetching(false))
+            dispatch(setUsers(data.items))
+            dispatch(setUsersTotalCount(data.totalCount))
+        })
+    }
+}
+
+export const unfollow = (userId) => {
+    return (dispatch) => {
+        dispatch(toggleIsFollowingProgress(true, userId))
+        UsersAPI.unfollow(userId)
+            .then(response => {
+                if (response.data.resultCode == 0) {
+                    dispatch(unfollowSuccess(userId))
+                }
+                dispatch(toggleIsFollowingProgress(false, userId))
+            });
+    }
+}
+
+export const follow = (userId) => {
+    return (dispatch) => {
+        dispatch(toggleIsFollowingProgress(true, userId))
+        UsersAPI.follow(userId)
+            .then(response => {
+                if (response.data.resultCode == 0) {
+                    dispatch(followSuccess(userId))
+                }
+                dispatch(toggleIsFollowingProgress(false, userId))
+            });
+    }
+}
 
 export default usersReducer; 
