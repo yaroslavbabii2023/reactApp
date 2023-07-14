@@ -31,6 +31,7 @@ import {connect} from "react-redux";
 const MapStateToProps = (state) => {
     return {
         dialogsPage: state.dialogsPage,
+        isAuth: state.auth.isAuth,
     }
 }
 

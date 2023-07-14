@@ -1,11 +1,14 @@
 import React from 'react';
 import s from './ProfileInfo.module.css'
 import Preloader from "../../common/Preloader/Preloader";
+import {Navigate} from "react-router-dom";
 
 const ProfileInfo = (props) => {
     if(!props.profile){
         return <Preloader/>
     }
+
+
     return (
         <div >
             <div className={s.profileBlock}>
