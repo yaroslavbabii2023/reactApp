@@ -6,7 +6,9 @@ const Header = (props) => {
     return <header className={s.header}>
         <img alt='' src="https://avatarquebec.org/wp-content/uploads/2021/10/Avatar_logo-horizontal_inverse.png.webp" />
         <div className={s.loginBlock}>
-            {props.isAuth ? props.login : <NavLink to={'/Login'}>Login</NavLink>}
+            {props.isAuth
+                ? <div>{props.login} <button onClick={props.logout}>Log out</button></div>
+                : <NavLink to={'/Login'}>Login</NavLink>}
         </div>
     </header>
 }
