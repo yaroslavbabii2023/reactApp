@@ -11,6 +11,7 @@ import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import Preloader from "./components/common/Preloader/Preloader";
+import withRouter from "./components/common/withRouter/withRouter";
 
 class App extends React.Component {
     componentDidMount() {
@@ -36,7 +37,6 @@ class App extends React.Component {
 
                         <Route path="/login/*"
                                element={<LoginPage/>}/>
-
                     </Routes>
                 </div>
             </div>
@@ -48,5 +48,5 @@ const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
 export default compose (
-    // withRouter,
+    withRouter,
     connect(mapStateToProps, {initializeApp}))(App);
