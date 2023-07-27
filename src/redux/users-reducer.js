@@ -22,10 +22,10 @@ const usersReducer = (state = initialState, action) => {
     debugger
     switch (action.type) {
         case FOLLOW:
-            return  {
+            return {
                 ...state,
                 users: state.users.map(u => {
-                    if(u.id === action.userId) {
+                    if (u.id === action.userId) {
                         return {...u, followed: true}
                     }
                     return u
@@ -35,7 +35,7 @@ const usersReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: state.users.map(u => {
-                    if(u.id === action.userId) {
+                    if (u.id === action.userId) {
                         return {...u, followed: false}
                     }
                     return u
@@ -52,10 +52,11 @@ const usersReducer = (state = initialState, action) => {
         case TOGGLE_IS_FETCHING:
             return {...state, isFetching: action.isFetching}
         case TOGGLE_IS_FOLLOWING_PROGRESS:
-            return {...state,
+            return {
+                ...state,
                 followingInProgress: action.isFetching
                     ? [...state.followingInProgress, action.userId]
-                    : state.followingInProgress.filter(id=>id !== action.userId)
+                    : state.followingInProgress.filter(id => id !== action.userId)
             }
 
         default:
@@ -69,11 +70,15 @@ export let unfollowSuccess = (userId) => ({type: UNFOLLOW, userId})
 export let setUsers = (users) => ({type: SET_USERS, users})
 export let setCurrentPage = (currentPage) => ({type: SET_CURRENT_PAGE, currentPage})
 export let setUsersTotalCount = (totalUsersCount) => ({type: SET_USERS_TOTAL_COUNT, count: totalUsersCount})
-export let toggleIsFetching = (isFetching)  => ({type: TOGGLE_IS_FETCHING, isFetching})
-export let toggleIsFollowingProgress = (isFetching, userId)  => ({type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching, userId})
+export let toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
+export let toggleIsFollowingProgress = (isFetching, userId) => ({
+    type: TOGGLE_IS_FOLLOWING_PROGRESS,
+    isFetching,
+    userId
+})
 
 
-export const requestUsers= (page, pageSize) => {
+export const requestUsers = (page, pageSize) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true))
         dispatch(setCurrentPage(page))
