@@ -16,7 +16,7 @@ import {
     getIsFetching,
     getPageSize,
     getTotalUsersCount,
-    getUser, getUsers, getUsersSelector, getUsersSuperSelector,
+    getUsers,
 } from "../../redux/users.selectors";
 
 class UsersContainer extends React.Component {
@@ -29,7 +29,6 @@ class UsersContainer extends React.Component {
     }
 
     render() {
-        debugger
         return <>
             {this.props.isFetching ? <Preloader/> : null}
             <Users
