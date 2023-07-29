@@ -16,5 +16,4 @@ let Paginator = ({totalUsersCount, pageSize, currentPage, onPageChanged}) => {
             </div>
     )
 }
-
 export default Paginator
