@@ -15,7 +15,6 @@ export const UsersAPI = {
                 return response.data;
             })
     },
-
     follow(userId){
         return instance.post(`follow/${userId}`)
     },

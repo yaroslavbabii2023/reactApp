@@ -12,7 +12,10 @@ const MyPosts = React.memo(props =>  {
         props.addPost(value.newPostText);
     }
 
-    let postsElements = props.posts.map(p => <Post message={p.message} like={p.likeCount}/>)
+    let postsElements =
+        [...props.posts]
+        .reverse()
+        .map(p => <Post message={p.message} like={p.likeCount}/>)
 
     return (
         <div className={s.postsBlock}>
