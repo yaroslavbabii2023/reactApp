@@ -1,6 +1,6 @@
 import profileReducer, {addPostActionCreator} from "./profile-reducer";
 
-it('length of posts should be incremented...', () => {
+it('length of posts should be incremented', () => {
     let action =  addPostActionCreator("it-kamasutra")
     let state = {
         posts: [
@@ -12,7 +12,7 @@ it('length of posts should be incremented...', () => {
 
     let newState = profileReducer(state, action);
 
-    expect(newState.posts.length).toEqual(5);
+    expect(newState.posts.length).toBe(5);
 })
 
 
